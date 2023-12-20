@@ -1,0 +1,79 @@
+<mat-toolbar color="primary">
+  <mat-toolbar-row>
+    <span class="example-spacer"></span>
+    <button
+      (click)="drawer.toggle()"
+      mat-icon-button
+      class="example-icon"
+      aria-label="Example icon-button with menu icon"
+    >
+      <mat-icon>menu</mat-icon>
+    </button>
+  </mat-toolbar-row>
+</mat-toolbar>
+<mat-drawer-container class="example-container" autosize>
+  <mat-drawer #drawer class="example-sidenav" mode="side">
+    <p><b>Matheus de Oliveira Rodrigues Saleh, 18 anos</b></p>
+    <p><b>Sistema Administrativo Banco de Sangue</b></p>
+    @if (showFiller) {
+    <p>Também não sei o que vai ter aqui</p>
+    }
+    <button (click)="showFiller = !showFiller" mat-raised-button>
+      Não sei o que vai ter nesse botão
+    </button>
+
+    <mat-selection-list>
+      <mat-list-item routerLink="/doadores">
+        <a matListItemTitle>Tabela de Doadores</a>
+      </mat-list-item>
+
+      <mat-list-item routerLink="/enfermeiros">
+        <a matListItemTitle>Tabela de Enfermeiros</a>
+      </mat-list-item>
+
+      <mat-list-item>
+        <a matListItemTitle>Tabela de Doações</a>
+      </mat-list-item>
+
+      <mat-list-item>
+        <a matListItemTitle>Tabela de Questões</a>
+      </mat-list-item>
+
+      <mat-list-item>
+        <a matListItemTitle>Tabela de Noticias</a>
+      </mat-list-item>
+
+      <mat-list-item>
+        <a matListItemTitle>Verificação de Elegibilidade de Doador</a>
+      </mat-list-item>
+
+      <mat-list-item>
+        <a matListItemTitle>Gerenciar Equipamentos Médicos</a>
+      </mat-list-item>
+
+      <mat-list-item>
+        <a matListItemTitle>Transfuções de Sangue</a>
+      </mat-list-item>
+
+      <mat-list-item>
+        <a matListItemTitle>Estoque de Sangue</a>
+      </mat-list-item>
+
+      <mat-list-item>
+        <a matListItemTitle>Camapanhas de Doação de Sangue</a>
+      </mat-list-item>
+
+      <mat-list-item>
+        <a matListItemTitle>Atualizar Guia de Doação de Sangue</a>
+      </mat-list-item>
+
+      <mat-list-item>
+        <a matListItemTitle>Controlar Acessos ao Sistema</a>
+      </mat-list-item>
+    </mat-selection-list>
+  </mat-drawer>
+
+  <div class="example-sidenav-content">
+    <router-outlet></router-outlet>
+  </div>
+</mat-drawer-container>
