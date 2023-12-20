@@ -1,4 +1,4 @@
-<mat-toolbar color="primary">
+<mat-toolbar color="warn">
   <mat-toolbar-row>
     <span class="example-spacer"></span>
     <button
@@ -8,18 +8,20 @@
       aria-label="Example icon-button with menu icon"
     >
       <mat-icon>menu</mat-icon>
+      Gerenciador do Banco de Sangue
     </button>
   </mat-toolbar-row>
 </mat-toolbar>
 <mat-drawer-container class="example-container" autosize>
   <mat-drawer #drawer class="example-sidenav" mode="side">
-    <p><b>Matheus de Oliveira Rodrigues Saleh, 18 anos</b></p>
+    <p><b>Matheus de Oliveira Rodrigues Saleh</b></p>
     <p><b>Sistema Administrativo Banco de Sangue</b></p>
+    <p><b>Hemocentro: </b> ASSIS - SP</p>
     @if (showFiller) {
     <p>Também não sei o que vai ter aqui</p>
     }
-    <button (click)="showFiller = !showFiller" mat-raised-button>
-      Não sei o que vai ter nesse botão
+    <button (click)="showFiller = !showFiller" mat-raised-button color="warn">
+      <i class="bi bi-box-arrow-left"></i> Deslogar
     </button>
 
     <mat-selection-list>
@@ -69,6 +71,58 @@
 
       <mat-list-item>
         <a matListItemTitle>Controlar Acessos ao Sistema</a>
+      </mat-list-item>
+
+      <mat-list-item>
+        <a matListItemTitle>Tabela de Receptores de Sangue</a>
+      </mat-list-item>
+
+      <mat-list-item>
+        <a matListItemTitle>Tabela de Conquistas de Usuário</a>
+      </mat-list-item>
+
+      <mat-list-item>
+        <a matListItemTitle>Dúvidas de Usuários</a>
+      </mat-list-item>
+
+      <mat-list-item>
+        <a matListItemTitle>Atribuir Missões a Usuários</a>
+      </mat-list-item>
+
+      <mat-list-item>
+        <a matListItemTitle>Gerenciar Descontos e Ofertas</a>
+      </mat-list-item>
+
+      <mat-list-item>
+        <a matListItemTitle>Gerenciar Empresas Parceiras</a>
+      </mat-list-item>
+
+      <mat-list-item>
+        <a matListItemTitle>Solicitar Doação em Massa Para Empresas</a>
+      </mat-list-item>
+
+      <mat-list-item>
+        <a matListItemTitle>Gerenciar Parcerias com Influenciadores</a>
+      </mat-list-item>
+
+      <mat-list-item>
+        <a matListItemTitle>Gerenciar Feedbacks Pós Doação</a>
+      </mat-list-item>
+
+      <mat-list-item>
+        <a matListItemTitle>Gerenciar Médicos</a>
+      </mat-list-item>
+
+      <mat-list-item>
+        <a matListItemTitle>Agendar Doação de Sangue</a>
+      </mat-list-item>
+
+      <mat-list-item>
+        <a matListItemTitle>Gerenciar Pessoas Precisando de Doação de Sangue</a>
+      </mat-list-item>
+
+      <mat-list-item>
+        <a matListItemTitle>Comunicação com outros hemocentros</a>
       </mat-list-item>
     </mat-selection-list>
   </mat-drawer>
