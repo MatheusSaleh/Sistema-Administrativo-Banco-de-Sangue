@@ -35,9 +35,15 @@ dependencies:
   '@angular/router':
     specifier: ^17.0.0
     version: 17.0.7(@angular/common@17.0.7)(@angular/core@17.0.7)(@angular/platform-browser@17.0.7)(rxjs@7.8.1)
+  bootstrap:
+    specifier: 5.3.2
+    version: 5.3.2(@popperjs/core@2.11.8)
   bootstrap-icons:
     specifier: ^1.11.2
     version: 1.11.2
+  primeng:
+    specifier: ^17.2.0
+    version: 17.2.0(@angular/common@17.0.7)(@angular/core@17.0.7)(@angular/forms@17.0.7)(rxjs@7.8.1)(zone.js@0.14.2)
   rxjs:
     specifier: ~7.8.0
     version: 7.8.1
@@ -2990,6 +2996,10 @@ packages:
     dev: true
     optional: true
 
+  /@popperjs/core@2.11.8:
+    resolution: {integrity: sha512-P1st0aksCrn9sGZhp8GMYwBnQsbvAWsZAX44oXNNvLHGqAOcoVxmjZiohstwQ7SqKnbR47akdNi+uleWD8+g6A==}
+    dev: false
+
   /@schematics/angular@17.0.7:
     resolution: {integrity: sha512-d7QKmcKrM4owb/2bR7Ipf23roiNbvbD/x7reNhQAtKAPLSHJ3Ulkf1+Yv+dj+9f+K7y9SBviEUSrD27BQ9WaxQ==}
     engines: {node: ^18.13.0 || >=20.9.0, npm: ^6.11.0 || ^7.5.6 || >=8.0.0, yarn: '>= 1.13.0'}
@@ -3695,6 +3705,14 @@ packages:
 
   /bootstrap-icons@1.11.2:
     resolution: {integrity: sha512-TgdiPv+IM9tgDb+dsxrnGIyocsk85d2M7T0qIgkvPedZeoZfyeG/j+yiAE4uHCEayKef2RP05ahQ0/e9Sv75Wg==}
+    dev: false
+
+  /bootstrap@5.3.2(@popperjs/core@2.11.8):
+    resolution: {integrity: sha512-D32nmNWiQHo94BKHLmOrdjlL05q1c8oxbtBphQFb9Z5to6eGRDCm0QgeaZ4zFBHzfg2++rqa2JkqCcxDy0sH0g==}
+    peerDependencies:
+      '@popperjs/core': ^2.11.8
+    dependencies:
+      '@popperjs/core': 2.11.8
     dev: false
 
   /brace-expansion@1.1.11:
@@ -6668,6 +6686,23 @@ packages:
     resolution: {integrity: sha512-FFw039TmrBqFK8ma/7OL3sDz/VytdtJr044/QUJtH0wK9lb9jLq9tJyIxUwtQJHwar2BqtiA4iCWSwo9JLkzFg==}
     engines: {node: '>=6'}
     dev: true
+
+  /primeng@17.2.0(@angular/common@17.0.7)(@angular/core@17.0.7)(@angular/forms@17.0.7)(rxjs@7.8.1)(zone.js@0.14.2):
+    resolution: {integrity: sha512-pajexYLeJWE6+pmDy0gHrMiQ/zLq4il54EcRNWC0jTNgJvWhoz/K/7NL9kXf2H4eWexNcrEieLnO9ko5uj3cVg==}
+    peerDependencies:
+      '@angular/common': ^17.0.0
+      '@angular/core': ^17.0.0
+      '@angular/forms': ^17.0.0
+      rxjs: ^6.0.0 || ^7.8.1
+      zone.js: ~0.14.0
+    dependencies:
+      '@angular/common': 17.0.7(@angular/core@17.0.7)(rxjs@7.8.1)
+      '@angular/core': 17.0.7(rxjs@7.8.1)(zone.js@0.14.2)
+      '@angular/forms': 17.0.7(@angular/common@17.0.7)(@angular/core@17.0.7)(@angular/platform-browser@17.0.7)(rxjs@7.8.1)
+      rxjs: 7.8.1
+      tslib: 2.6.2
+      zone.js: 0.14.2
+    dev: false
 
   /proc-log@3.0.0:
     resolution: {integrity: sha512-++Vn7NS4Xf9NacaU9Xq3URUuqZETPsf8L4j5/ckhaRYsfPeRyzGw+iDjFhV/Jr3uNmTvvddEJFWh5R1gRgUH8A==}

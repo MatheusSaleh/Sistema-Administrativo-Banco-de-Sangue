@@ -1,17 +1,35 @@
 .example-container {
-  width: 100%;
-  height: 100%;
+  height: 100vh;
   border: 1px solid rgba(0, 0, 0, 0.5);
 }
 
 .example-sidenav-content {
+  flex: 1;
   display: flex;
-  height: 100%;
-  align-items: center;
-  justify-content: center;
+  flex-direction: column; /* Make the content flex container a column */
+}
+
+.router-outlet {
+  flex: 1; /* Make the router-outlet take up all available space */
+  overflow-y: auto; /* Add scrollbar if content is too long */
+  padding: 20px; /* Add padding for spacing */
 }
 
 .example-sidenav {
   padding: 20px;
+  width: 500px;
+  background-color: #f0f0f0;
 }
 
+mat-list-item {
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+mat-list-item:hover {
+  background-color: #ddd;
+}
+
+.example-icon {
+  margin-right: 16px;
+}
