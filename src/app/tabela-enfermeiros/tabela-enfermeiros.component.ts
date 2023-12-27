@@ -30,7 +30,6 @@ export class TabelaEnfermeirosComponent {
   public buscarInformacoesEnfermeiros(): void {
     this.enfermeiroService.listarEnfermeiros().subscribe((dados: Enfermeiro[]) => {
       this.enfermeiros = dados;
-      console.log(dados);
     })
   }
 

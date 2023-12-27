@@ -1,1 +1,33 @@
-<p>tabela-doacoes works!</p>
+<p-table [value]="doacoes">
+    <ng-template pTemplate="header">
+        <tr>
+            <th>COREN ENFERMEIRO</th>
+            <th>ENFERMEIRO</th>
+            <th>NOME DOADOR</th>
+            <th>EMAIL DOADOR</th>
+            <th>DATA DA DOAÇÃO</th>
+            <th>TIPO DE DOAÇÃO</th>
+            <th>STATUS DA DOAÇÃO</th>
+            <th>AÇÕES</th>
+        </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-doacao>
+        <tr>
+            <td>{{doacao.enfermeiro.coren}}</td>
+            <td>{{doacao.enfermeiro.nomeCompleto}}</td>
+            <td>{{doacao.doador.nomeCompleto}}</td>
+            <td>{{doacao.doador.email}}</td>
+            <td>{{doacao.dataDoacao}}</td>
+            <td>{{doacao.tipoDoacao}}</td>
+            <td>{{doacao.statusDoacao}}</td>
+            <td>
+                <button mat-mini-fab color="primary m-2" pTooltip="Editar Doação" tooltipPosition="bottom">
+                    <i class="bi bi-pencil"></i>
+                  </button>
+                  <button mat-mini-fab color="warn" class="m-2" pTooltip="Excluir Doação" tooltipPosition="bottom">
+                    <i class="bi bi-trash"></i>
+                  </button>
+            </td>
+        </tr>
+    </ng-template>
+</p-table>
