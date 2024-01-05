@@ -1,1 +1,31 @@
-<p>tabela-questoes works!</p>
+<p-table [value]="questoes">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>PERGUNTA</th>
+      <th>OPÇÃO A</th>
+      <th>OPÇÃO B</th>
+      <th>OPÇÃO C</th>
+      <th>OPÇÃO D</th>
+      <th>RESPOSTA CORRETA</th>
+      <th>Ações</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-questao>
+    <tr>
+      <td>{{questao.pergunta}}</td>
+      <td>{{questao.opcaoA}}</td>
+      <td>{{questao.opcaoB}}</td>
+      <td>{{questao.opcaoC}}</td>
+      <td>{{questao.opcaoD}}</td>
+      <td>{{questao.respostaCorreta}}</td>
+      <td>
+        <button mat-mini-fab color="primary m-2" pTooltip="Editar Questão" tooltipPosition="bottom">
+          <i class="bi bi-pencil"></i>
+        </button>
+        <button mat-mini-fab color="warn" class="m-2" pTooltip="Excluir Questão" tooltipPosition="bottom" >
+          <i class="bi bi-trash"></i>
+        </button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>
