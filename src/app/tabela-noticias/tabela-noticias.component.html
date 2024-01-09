@@ -1,1 +1,27 @@
-<p>tabela-noticias works!</p>
+<p-table [value]="noticias">
+  <ng-template pTemplate="header">
+    <tr>
+      <th>NOME AUTOR</th>
+      <th>NOTICIA</th>
+      <th>RESUMO</th>
+      <th>TITULO</th>
+      <th>AÇÕES</th>
+    </tr>
+  </ng-template>
+  <ng-template pTemplate="body" let-noticia>
+    <tr>
+      <td>{{noticia.nomeAutor}}</td>
+      <td>{{noticia.noticia}}</td>
+      <td>{{noticia.resumo}}</td>
+      <td>{{noticia.titulo}}</td>
+      <td>
+        <button mat-mini-fab color="primary m-2" pTooltip="Editar Noticia" tooltipPosition="bottom">
+          <i class="bi bi-pencil"></i>
+        </button>
+        <button mat-mini-fab color="warn" class="m-2" pTooltip="Excluir Noticia" tooltipPosition="bottom">
+          <i class="bi bi-trash"></i>
+        </button>
+      </td>
+    </tr>
+  </ng-template>
+</p-table>

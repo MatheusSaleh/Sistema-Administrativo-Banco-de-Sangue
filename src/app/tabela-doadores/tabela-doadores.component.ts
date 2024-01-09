@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { MatButtonModule } from '@angular/material/button';
-import {MatTableModule} from '@angular/material/table';
 import { TooltipModule } from 'primeng/tooltip';
 import { Doador } from '../models/Doador.model';
 import { DoadorService } from '../services/doador.service';
