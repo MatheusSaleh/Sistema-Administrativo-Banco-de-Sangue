@@ -1,4 +1,5 @@
-<p-table [value]="doadores">
+<p-progressSpinner *ngIf="carregandoInformacoesDoadores" class="spinner"></p-progressSpinner>
+<p-table [value]="doadores" *ngIf="!carregandoInformacoesDoadores" >
   <ng-template pTemplate="header">
     <tr>
       <th>NOME COMPLETO</th>
