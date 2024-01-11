@@ -1,56 +1,132 @@
 import { Routes } from '@angular/router';
-import { TabelaEnfermeirosComponent } from './tabela-enfermeiros/tabela-enfermeiros.component';
-import { TabelaDoadoresComponent } from './tabela-doadores/tabela-doadores.component';
-import { TabelaDoacoesComponent } from './tabela-doacoes/tabela-doacoes.component';
-import { TabelaQuestoesComponent } from './tabela-questoes/tabela-questoes.component';
-import { TabelaNoticiasComponent } from './tabela-noticias/tabela-noticias.component';
-import { VerificaElegibilidadeComponent } from './verifica-elegibilidade/verifica-elegibilidade.component';
-import { GerenciaEquipamentosMedicosComponent } from './gerencia-equipamentos-medicos/gerencia-equipamentos-medicos.component';
-import { TransfucoesDeSangueComponent } from './transfucoes-de-sangue/transfucoes-de-sangue.component';
-import { EstoqueDeSangueComponent } from './estoque-de-sangue/estoque-de-sangue.component';
-import { CampanhasDeDoacaoDeSangueComponent } from './campanhas-de-doacao-de-sangue/campanhas-de-doacao-de-sangue.component';
-import { AtualizarGuiaDoacaoDeSangueComponent } from './atualizar-guia-doacao-de-sangue/atualizar-guia-doacao-de-sangue.component';
-import { ControleAcessosComponent } from './controle-acessos/controle-acessos.component';
-import { TabelaReceptoresComponent } from './tabela-receptores/tabela-receptores.component';
-import { TabelaConquistasDeUsuarioComponent } from './tabela-conquistas-de-usuario/tabela-conquistas-de-usuario.component';
-import { DuvidasDeUsuariosComponent } from './duvidas-de-usuarios/duvidas-de-usuarios.component';
-import { AtribuiMissoesComponent } from './atribui-missoes/atribui-missoes.component';
-import { GerenciarDescontosOfertasComponent } from './gerenciar-descontos-ofertas/gerenciar-descontos-ofertas.component';
-import { GerenciarEmpresasParceirasComponent } from './gerenciar-empresas-parceiras/gerenciar-empresas-parceiras.component';
-import { SolicitarDoacaoEmMassaParaEmpresaComponent } from './solicitar-doacao-em-massa-para-empresa/solicitar-doacao-em-massa-para-empresa.component';
-import { GerenciarParceriasComInfluenciadoresComponent } from './gerenciar-parcerias-com-influenciadores/gerenciar-parcerias-com-influenciadores.component';
-import { GerenciarFeedbacksPosDoacaoComponent } from './gerenciar-feedbacks-pos-doacao/gerenciar-feedbacks-pos-doacao.component';
-import { GerenciarMedicosComponent } from './gerenciar-medicos/gerenciar-medicos.component';
-import { AgendarDoacaoDeSangueComponent } from './agendar-doacao-de-sangue/agendar-doacao-de-sangue.component';
-import { GerenciarPessoasPrecisandoDeDoacaoComponent } from './gerenciar-pessoas-precisando-de-doacao/gerenciar-pessoas-precisando-de-doacao.component';
-import { ComunicaoComOutrosHemocentrosComponent } from './comunicao-com-outros-hemocentros/comunicao-com-outros-hemocentros.component';
+
 
 export const routes: Routes = [
-  {path: 'doadores', component: TabelaDoadoresComponent},
-  {path: 'enfermeiros', component: TabelaEnfermeirosComponent},
-  {path: 'doacoes', component: TabelaDoacoesComponent},
-  {path: 'questoes', component: TabelaQuestoesComponent},
-  {path: 'noticias', component: TabelaNoticiasComponent},
-  {path: 'verifica-elegibilidade', component: VerificaElegibilidadeComponent},
-  {path: 'gerencia-equipamentos-medicos', component: GerenciaEquipamentosMedicosComponent},
-  {path: 'transfucoes-de-sangue', component: TransfucoesDeSangueComponent},
-  {path: 'estoque-sangue', component: EstoqueDeSangueComponent},
-  {path:  'campanhas-de-doacao-de-sangue', component: CampanhasDeDoacaoDeSangueComponent},
-  {path: 'atualizar-guia-de-doacao-de-sangue', component: AtualizarGuiaDoacaoDeSangueComponent},
-  {path: 'controle-acesso', component: ControleAcessosComponent},
-  {path: 'tabela-receptores', component: TabelaReceptoresComponent},
-  {path: 'tabela-conquistas-de-usuario', component: TabelaConquistasDeUsuarioComponent},
-  {path: 'duvidas-de-usuarios', component: DuvidasDeUsuariosComponent},
-  {path: 'atribui-missoes', component: AtribuiMissoesComponent},
-  {path: 'gerenciar-descontos-ofertas', component: GerenciarDescontosOfertasComponent},
-  {path: 'gerenciar-empresas-parceiras', component: GerenciarEmpresasParceirasComponent},
-  {path: 'solicitar-doacao-em-massa-para-empresa', component: SolicitarDoacaoEmMassaParaEmpresaComponent},
-  {path: 'gerenciar-parcerias-com-influenciadores', component: GerenciarParceriasComInfluenciadoresComponent},
-  {path: 'gerenciar-feedbacks-pos-doacao', component: GerenciarFeedbacksPosDoacaoComponent},
-  {path: 'gerenciar-medicos', component: GerenciarMedicosComponent},
-  {path: 'agendar-doacao-de-sangue', component: AgendarDoacaoDeSangueComponent},
-  {path: 'gerenciar-pessoas-precisando-de-doacao', component: GerenciarPessoasPrecisandoDeDoacaoComponent},
-  {path: 'comunicacao-com-outros-hemocentros', component: ComunicaoComOutrosHemocentrosComponent}
+  {
+    path: 'doadores',
+    loadComponent: () => import(`./tabela-doadores/tabela-doadores.component`)
+      .then(c => c.TabelaDoadoresComponent),
+    },
+  {
+    path: 'enfermeiros',
+    loadComponent: () => import(`./tabela-enfermeiros/tabela-enfermeiros.component`)
+    .then(c => c.TabelaEnfermeirosComponent)
+  },
+  {
+    path: 'doacoes',
+    loadComponent: () => import(`./tabela-doacoes/tabela-doacoes.component`)
+    .then(c => c.TabelaDoacoesComponent)
+  },
+  {
+    path: 'questoes',
+    loadComponent: () => import(`./tabela-questoes/tabela-questoes.component`)
+    .then(c => c.TabelaQuestoesComponent)
+  },
+  {
+    path: 'noticias',
+    loadComponent: () => import(`./tabela-noticias/tabela-noticias.component`)
+    .then(c => c.TabelaNoticiasComponent)
+  },
+  {
+    path: 'verifica-elegibilidade',
+    loadComponent: () => import(`./verifica-elegibilidade/verifica-elegibilidade.component`)
+    .then(c => c.VerificaElegibilidadeComponent)
+  },
+  {
+  path: 'gerencia-equipamentos-medicos',
+  loadComponent: () => import(`./gerencia-equipamentos-medicos/gerencia-equipamentos-medicos.component`)
+  .then(c => c.GerenciaEquipamentosMedicosComponent)
+  },
+  {
+    path: 'transfucoes-de-sangue',
+    loadComponent: () => import(`./transfucoes-de-sangue/transfucoes-de-sangue.component`)
+    .then(c => c.TransfucoesDeSangueComponent)
+  },
+  {
+    path: 'estoque-sangue',
+    loadComponent: () => import(`./estoque-de-sangue/estoque-de-sangue.component`)
+    .then(c => c.EstoqueDeSangueComponent)
+  },
+  {
+    path: 'campanhas-de-doacao-de-sangue',
+    loadComponent: () => import(`./campanhas-de-doacao-de-sangue/campanhas-de-doacao-de-sangue.component`)
+    .then(c => c.CampanhasDeDoacaoDeSangueComponent)
+  },
+  {
+    path: 'atualizar-guia-de-doacao-de-sangue',
+    loadComponent: () => import(`./atualizar-guia-doacao-de-sangue/atualizar-guia-doacao-de-sangue.component`)
+    .then(c => c.AtualizarGuiaDoacaoDeSangueComponent)
+  },
+  {
+    path: 'controle-acesso',
+    loadComponent: () =>import(`./controle-acessos/controle-acessos.component`)
+    .then(c => c.ControleAcessosComponent)
+  },
+  {
+    path: 'tabela-receptores',
+    loadComponent: () => import(`./tabela-receptores/tabela-receptores.component`)
+    .then(c => c.TabelaReceptoresComponent)
+  },
+  {
+    path: 'tabela-conquistas-de-usuario',
+    loadComponent: () => import(`./tabela-conquistas-de-usuario/tabela-conquistas-de-usuario.component`)
+    .then(c => c.TabelaConquistasDeUsuarioComponent)
+  },
+  {
+    path: 'duvidas-de-usuarios',
+    loadComponent: () => import(`./duvidas-de-usuarios/duvidas-de-usuarios.component`)
+    .then(c => c.DuvidasDeUsuariosComponent)
+  },
+  {
+    path: 'atribui-missoes',
+    loadComponent: () => import(`./atribui-missoes/atribui-missoes.component`)
+    .then(c => c.AtribuiMissoesComponent)
+  },
+  {
+    path: 'gerenciar-descontos-ofertas',
+    loadComponent: () => import(`./gerenciar-descontos-ofertas/gerenciar-descontos-ofertas.component`)
+    .then(c => c.GerenciarDescontosOfertasComponent)
+  },
+  {
+    path: 'gerenciar-empresas-parceiras',
+    loadComponent: () => import(`./gerenciar-empresas-parceiras/gerenciar-empresas-parceiras.component`)
+    .then(c => c.GerenciarEmpresasParceirasComponent)
+  },
+  {
+    path: 'solicitar-doacao-em-massa-para-empresa',
+    loadComponent: () => import(`./solicitar-doacao-em-massa-para-empresa/solicitar-doacao-em-massa-para-empresa.component`)
+    .then(c => c.SolicitarDoacaoEmMassaParaEmpresaComponent)
+  },
+  {
+    path: 'gerenciar-parcerias-com-influenciadores',
+    loadComponent: () => import(`./gerenciar-parcerias-com-influenciadores/gerenciar-parcerias-com-influenciadores.component`)
+    .then(c => c.GerenciarParceriasComInfluenciadoresComponent)
+  },
+  {
+    path: 'gerenciar-feedbacks-pos-doacao',
+    loadComponent: () => import(`./gerenciar-feedbacks-pos-doacao/gerenciar-feedbacks-pos-doacao.component`)
+    .then(c => c.GerenciarFeedbacksPosDoacaoComponent)
+  },
+  {
+    path: 'gerenciar-medicos',
+    loadComponent: () => import(`./gerenciar-medicos/gerenciar-medicos.component`)
+    .then(c => c.GerenciarMedicosComponent)
+  },
+  {
+    path: 'agendar-doacao-de-sangue',
+    loadComponent: () => import(`./agendar-doacao-de-sangue/agendar-doacao-de-sangue.component`)
+    .then(c => c.AgendarDoacaoDeSangueComponent)
+  },
+  {
+    path: 'gerenciar-pessoas-precisando-de-doacao',
+    loadComponent: () => import(`./gerenciar-pessoas-precisando-de-doacao/gerenciar-pessoas-precisando-de-doacao.component`)
+    .then(c => c.GerenciarPessoasPrecisandoDeDoacaoComponent)
+  },
+  {
+    path: 'comunicacao-com-outros-hemocentros',
+    loadComponent: () => import(`./comunicao-com-outros-hemocentros/comunicao-com-outros-hemocentros.component`)
+    .then(c => c.ComunicaoComOutrosHemocentrosComponent)
+  }
 ];
 
 

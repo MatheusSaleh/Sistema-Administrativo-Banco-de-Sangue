@@ -1,4 +1,5 @@
-<p-table [value]="questoes">
+<p-progressSpinner *ngIf="carregandoQuestoes"></p-progressSpinner>
+<p-table [value]="questoes" *ngIf="!carregandoQuestoes">
   <ng-template pTemplate="header">
     <tr>
       <th>PERGUNTA</th>

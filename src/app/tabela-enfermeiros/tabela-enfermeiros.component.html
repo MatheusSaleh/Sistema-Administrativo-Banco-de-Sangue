@@ -1,4 +1,5 @@
-<p-table [value]="enfermeiros" >
+<p-progressSpinner *ngIf="carregandoEnfermeiros" class="spinner"></p-progressSpinner>
+<p-table [value]="enfermeiros" *ngIf="!carregandoEnfermeiros" >
     <ng-template pTemplate="header">
         <tr>
             <th>COREN</th>

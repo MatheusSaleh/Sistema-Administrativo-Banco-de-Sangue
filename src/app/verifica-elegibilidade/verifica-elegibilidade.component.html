@@ -1,3 +1,22 @@
-<div class="verifica-elegibilidade">
+<p-progressSpinner *ngIf="carregandoPerguntas"></p-progressSpinner>
+<mat-card class="verifica-elegibilidade" *ngIf="!carregandoPerguntas">
   <h1>Verificação de Elegibilidade de Doador</h1>
-</div>
+
+  <div *ngIf="perguntas.length > 0 && perguntaAtualIndex < perguntas.length">
+    <h2>{{ perguntas[perguntaAtualIndex].titulo }}</h2>
+    <h3>{{ perguntas[perguntaAtualIndex].pergunta }}</h3>
+
+    <div class="row">
+
+      <mat-radio-group>
+        <mat-radio-button color="primary">{{perguntas[perguntaAtualIndex].opcao1}}</mat-radio-button>
+        <mat-radio-button color="primary">{{perguntas[perguntaAtualIndex].opcao2}}</mat-radio-button>
+      </mat-radio-group>
+
+      <br />
+      <button mat-raised-button color="primary" (click)="mostrarProximaPergunta()" class="mt-2">
+        Próxima Pergunta
+      </button>
+    </div>
+  </div>
+</mat-card>

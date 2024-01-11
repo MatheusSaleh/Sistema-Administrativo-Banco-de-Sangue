@@ -1,4 +1,5 @@
-<p-table [value]="noticias">
+<p-progressSpinner *ngIf="carregandoNoticias" ></p-progressSpinner>
+<p-table [value]="noticias" *ngIf="!carregandoNoticias" >
   <ng-template pTemplate="header">
     <tr>
       <th>NOME AUTOR</th>
