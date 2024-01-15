@@ -1,1 +1,52 @@
-<p>gerencia-equipamentos-medicos works!</p>
+<p-progressSpinner *ngIf="carregandoEquipamentos"></p-progressSpinner>
+
+  <p-table [value]="equipamentos" *ngIf="!carregandoEquipamentos">
+    <ng-template pTemplate="header">
+      <tr>
+        <th>NOME EQUIPAMENTO</th>
+        <th>NÚMERO</th>
+        <th>FABRICANTE</th>
+        <th>MODELO</th>
+        <th>DATA FABRICAÇÃO</th>
+        <th>DATA AQUISIÇÃO</th>
+        <th>DATA ÚLTIMA MANUTENÇÃO</th>
+        <th>STATUS MANUTENÇÃO</th>
+        <th>LOCALIZAÇÃO</th>
+        <th>CONDIÇÃO</th>
+        <th>CERTIFICAÇÕES</th>
+        <th>HISTÓRICO MANUTENÇÃO</th>
+        <th>CUSTO MANUTENÇÃO (R$)</th>
+        <th>CALIBRAÇÃO</th>
+        <th>DOCUMENTAÇÃO TÉCNICA</th>
+        <th>Ações</th>
+      </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-equipamento>
+      <tr>
+        <td>{{equipamento.nomeEquipamento}}</td>
+        <td>{{equipamento.numeroSerie}}</td>
+        <td>{{equipamento.fabricante}}</td>
+        <td>{{equipamento.modelo}}</td>
+        <td>{{equipamento.dataFabricacao}}</td>
+        <td>{{equipamento.dataAquisicao}}</td>
+        <td>{{equipamento.dataUltimaManutencao}}</td>
+        <td>{{equipamento.statusManutencao}}</td>
+        <td>{{equipamento.localizacao}}</td>
+        <td>{{equipamento.condicacao}}</td>
+        <td>{{equipamento.certificacoes}}</td>
+        <td>{{equipamento.historicoManutencao}}</td>
+        <td>{{equipamento.custoManutencao}}</td>
+        <td>{{equipamento.historicoManutencao}}</td>
+        <td>{{equipamento.documentacaoTecnica}}</td>
+        <td>
+          <button mat-mini-fab color="primary m-2" pTooltip="Editar Doação" tooltipPosition="bottom">
+            <i class="bi bi-pencil"></i>
+          </button>
+          <button mat-mini-fab color="warn" class="m-2" pTooltip="Excluir Doação" tooltipPosition="bottom">
+            <i class="bi bi-trash"></i>
+          </button>
+        </td>
+      </tr>
+    </ng-template>
+  </p-table>
+

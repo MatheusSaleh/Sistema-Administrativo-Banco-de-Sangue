@@ -6,6 +6,7 @@ import { DoadorService } from '../services/doador.service';
 import { TableModule } from 'primeng/table';
 import { ProgressSpinnerModule } from 'primeng/progressspinner';
 import { NgIf } from '@angular/common';
+import { DataConverter } from '../utils/DataConverter';
 
 @Component({
   selector: 'app-tabela-doadores',
@@ -30,7 +31,10 @@ export class TabelaDoadoresComponent {
     this.carregandoInformacoesDoadores = true;
 
     this.doadorService.listarDoadores().subscribe((dados: Doador[]) => {
-      this.doadores = dados;
+      this.doadores = dados.map((doador) => ({
+        ...doador,
+        dataNascimento: DataConverter.formartarData(doador.dataNascimento)
+      }));
       this.carregandoInformacoesDoadores = false;
     })
   }

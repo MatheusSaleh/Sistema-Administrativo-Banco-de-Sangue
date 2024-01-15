@@ -3,7 +3,7 @@ export class Doador{
 
     public email: String | undefined;
 
-    public dataNascimento: String | undefined;
+    public dataNascimento: string | undefined;
 
     public pontuacao: String | undefined;
 

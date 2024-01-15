@@ -5,8 +5,8 @@ import { Component } from '@angular/core';
   standalone: true,
   imports: [],
   templateUrl: './gerenciar-medicos.component.html',
-  styleUrl: './gerenciar-medicos.component.css'
+  styleUrl: './gerenciar-medicos.component.css',
 })
 export class GerenciarMedicosComponent {
-
+  constructor() {}
 }
