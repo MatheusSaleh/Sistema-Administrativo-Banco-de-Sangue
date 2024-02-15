@@ -1,1 +1,28 @@
-<p>transfucoes-de-sangue works!</p>
+<p-progressSpinner *ngIf="carregandoTransfusoes"></p-progressSpinner>
+<p-table [value]="transfusoes" *ngIf="!carregandoTransfusoes">
+    <ng-template pTemplate="header">
+    <tr>
+        <th>Nome do Doador</th>
+        <th>Nome do Receptor</th>
+        <th>Nome do Médico</th>
+        <th>Data da Transfusão</th>
+        <th>Tipo de Sangue do Doador</th>
+        <th>Quantidade Transfusa</th>
+        <th>Componentes Sanguineos</th>
+        <th>Medico Responsável</th>
+        <th>Local Transfusao</th>
+    </tr>
+    </ng-template>
+    <ng-template pTemplate="body" let-transfusao>
+        <tr>
+        <td>{{transfusao.doador.nomeCompleto}}</td>
+        <td>{{transfusao.receptor.nomeCompleto}}</td>
+        <td>{{transfusao.medico.nome}}</td>
+        <td>{{transfusao.dataHoraTransfusao}}</td>
+        <td>{{transfusao.tipoSangueDoador}}</td>
+        <td>{{transfusao.quantidadeTransfusa}}</td>
+        <td>{{transfusao.componentesSanguineos}}</td>
+        <td>{{transfusao.medicoResponsavel}}</td>
+        <td>{{transfusao.localTransfusao}}</td>
+    </ng-template>
+</p-table>
